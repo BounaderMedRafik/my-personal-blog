@@ -11,25 +11,26 @@ import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import ToggleMode from "./toggle-mode";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const socials = [
   {
     social: "Github",
     link: "github.com",
     icon: <GithubIcon size={15} />,
-    bg: "#6e5494",
   },
   {
     social: "Youtube",
     link: "yotube.com",
     icon: <YoutubeIcon size={15} />,
-    bg: "#FF0000",
   },
 ];
 
@@ -54,14 +55,23 @@ const MyNavigation = () => {
           {links.map((item, index) => (
             <div key={index}>
               <Link href={item.linkto}>
-                <Button size={"icon"} variant={"default"}>
-                  {item.icon}
-                </Button>
+                <TooltipProvider delayDuration={10}>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Button size={"icon"} variant={"default"}>
+                        {item.icon}
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent className="mb-1">
+                      {item.name}
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </Link>
             </div>
           ))}
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger className="hover:rotate-90 transition-all">
               <Button variant={"link"} size={"icon"}>
                 <EllipsisVertical size={15} />
               </Button>
@@ -70,12 +80,7 @@ const MyNavigation = () => {
               <div className="flex items-center gap-0.5">
                 {socials.map((item, index) => (
                   <div key={index}>
-                    <Button
-                      className="hover:opacity-75 transition-all"
-                      style={{ backgroundColor: item.bg }}
-                      variant={"default"}
-                      size={"icon"}
-                    >
+                    <Button variant={"default"} size={"icon"}>
                       {item.icon}
                     </Button>
                   </div>
