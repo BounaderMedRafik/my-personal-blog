@@ -1,55 +1,92 @@
 import React from "react";
-import MyLogo from "../(brand)/MyLogo";
-import { GithubIcon, YoutubeIcon } from "lucide-react";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
+  Code,
+  EllipsisVertical,
+  GithubIcon,
+  Glasses,
+  YoutubeIcon,
+} from "lucide-react";
 import { Button } from "../ui/button";
-import Search from "./Search";
+import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import ToggleMode from "./toggle-mode";
 
 const socials = [
   {
     social: "Github",
     link: "github.com",
     icon: <GithubIcon size={15} />,
+    bg: "#6e5494",
   },
   {
     social: "Youtube",
     link: "yotube.com",
     icon: <YoutubeIcon size={15} />,
+    bg: "#FF0000",
+  },
+];
+
+const links = [
+  {
+    name: "Blog",
+    linkto: "/blog",
+    icon: <Glasses size={12} />,
+  },
+  {
+    name: "Frontend",
+    linkto: "/frontend",
+    icon: <Code size={12} />,
   },
 ];
 
 const MyNavigation = () => {
   return (
-    <div className="flex border border-black/10  fixed z-10 bg-gray-500/10 backdrop-blur-md shadow-xl shadow-black/5  rounded-none md:rounded-lg  top-5 w-full max-w-6xl left-1/2 -translate-x-1/2 bg-red-50 px-5 py-2 items-center justify-between">
-      <div>
-        <MyLogo />
-      </div>
-      <div>
-        {" "}
-        <Search />{" "}
-      </div>
+    <div className="fixed p-1 bg-background/50 backdrop-blur-md border-foreground/50 border-[1px] rounded-full shadow-2xl shadow-foreground/30   bottom-10 right-1/2 translate-x-1/2">
       <div className="flex items-center">
-        {socials.map((index) => (
-          <div key={index.social}>
-            <TooltipProvider delayDuration={50}>
-              <Tooltip>
-                <TooltipTrigger>
-                  <a href={index.link}>
-                    <Button size={"icon"} variant={"link"}>
-                      {index.icon}
+        <div className="flex items-center gap-0.5">
+          {links.map((item, index) => (
+            <div key={index}>
+              <Link href={item.linkto}>
+                <Button size={"icon"} variant={"default"}>
+                  {item.icon}
+                </Button>
+              </Link>
+            </div>
+          ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Button variant={"link"} size={"icon"}>
+                <EllipsisVertical size={15} />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="mb-1">
+              <div className="flex items-center gap-0.5">
+                {socials.map((item, index) => (
+                  <div key={index}>
+                    <Button
+                      className="hover:opacity-75 transition-all"
+                      style={{ backgroundColor: item.bg }}
+                      variant={"default"}
+                      size={"icon"}
+                    >
+                      {item.icon}
                     </Button>
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent>{index.social}</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        ))}
+                  </div>
+                ))}
+              </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        <div>
+          <ToggleMode />
+        </div>
       </div>
     </div>
   );

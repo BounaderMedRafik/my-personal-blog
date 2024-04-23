@@ -4,7 +4,10 @@ import mypicture from "@/public/bounadermedrafik.jpeg";
 const HeroSec = () => {
   return (
     <div className="font-light">
-      <div>let&apos;s cook a website</div>
+      <div className="text-5xl font-bold opacity-10  leading-[59px]">
+        I Know The <span className="bg-primary">Chemistry</span>, And You Know
+        The <span className="bg-primary">Business</span>
+      </div>
       <div className="w-full">
         <AboutMe />
       </div>
@@ -19,13 +22,13 @@ const AboutMe = () => {
         <Image
           width={50}
           height={50}
-          className="rounded-full"
+          className="rounded-full "
           alt="my profile pic"
           src={mypicture}
         />
         <div>
           <div className="text-sm font-semibold">Bounader Med Rafik</div>
-          <div className="text-xs ">Front-End developper</div>
+          <div className="text-xs">Front-End developper</div>
         </div>
       </div>
 
