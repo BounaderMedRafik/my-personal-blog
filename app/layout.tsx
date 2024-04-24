@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/(providers)/theme-provider";
 import MyNavigation from "@/components/(layout comps)/MyNavigation";
+import TransitionProvider from "@/components/(providers)/TransitionProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,20 +17,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="max-w-2xl relative mx-auto ">
-            <MyNavigation />
-            <div className="pt-32 px-5 md:px-0">{children}</div>
-          </div>
-        </ThemeProvider>
-      </body>
+    <html suppressHydrationWarning lang="en">
+      <TransitionProvider>
+        <body className={inter.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="max-w-2xl relative mx-auto ">
+              <MyNavigation />
+              <div className="pt-32 px-5 md:px-0">{children}</div>
+            </div>
+          </ThemeProvider>
+        </body>
+      </TransitionProvider>
     </html>
   );
 }

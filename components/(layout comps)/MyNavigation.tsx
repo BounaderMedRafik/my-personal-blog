@@ -25,12 +25,12 @@ const socials = [
   {
     social: "Github",
     link: "github.com",
-    icon: <GithubIcon size={15} />,
+    icon: <GithubIcon size={12} />,
   },
   {
     social: "Youtube",
     link: "yotube.com",
-    icon: <YoutubeIcon size={15} />,
+    icon: <YoutubeIcon size={12} />,
   },
 ];
 
@@ -58,8 +58,8 @@ const MyNavigation = () => {
                 <TooltipProvider delayDuration={10}>
                   <Tooltip>
                     <TooltipTrigger>
-                      <Button size={"icon"} variant={"default"}>
-                        {item.icon}
+                      <Button asChild size={"icon"} variant={"default"}>
+                        <Link href={item.linkto}>{item.icon}</Link>
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent className="mb-1">
@@ -80,8 +80,8 @@ const MyNavigation = () => {
               <div className="flex items-center gap-0.5">
                 {socials.map((item, index) => (
                   <div key={index}>
-                    <Button variant={"default"} size={"icon"}>
-                      {item.icon}
+                    <Button asChild variant={"default"} size={"icon"}>
+                      <Link href={item.link}>{item.icon}</Link>
                     </Button>
                   </div>
                 ))}

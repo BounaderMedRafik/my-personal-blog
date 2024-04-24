@@ -56,7 +56,36 @@ const AboutMe = () => {
           to front-end magic.
         </div>
       </div>
+
+      <div className="mt-10">
+        <ThuggishRuggish />
+      </div>
     </>
+  );
+};
+
+const ThuggishRuggish = () => {
+  return (
+    <div>
+      <div className="block dark:hidden">
+        <Image
+          className="w-full"
+          width={5}
+          height={5}
+          alt="thuggishRuggishBone"
+          src={"/TuggishRuggish.svg"}
+        />
+      </div>
+      <div className="hidden dark:block">
+        <Image
+          className="w-full"
+          width={5}
+          height={5}
+          alt="thuggishRuggishBone"
+          src={"/TuggishRuggishWhite.svg"}
+        />
+      </div>
+    </div>
   );
 };
 
