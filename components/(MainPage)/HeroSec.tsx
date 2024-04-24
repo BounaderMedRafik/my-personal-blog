@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import mypicture from "@/public/bounadermedrafik.jpeg";
+import RecentProjects from "./RecentProjects";
 const HeroSec = () => {
   return (
     <div className="font-light">
@@ -10,6 +11,9 @@ const HeroSec = () => {
       </div>
       <div className="w-full">
         <AboutMe />
+      </div>
+      <div className="w-full">
+        <RecentProjects />
       </div>
     </div>
   );
