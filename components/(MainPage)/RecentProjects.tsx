@@ -24,7 +24,7 @@ const RecentProjects = () => {
             <FollowerPointerCard
               title={
                 <>
-                  <div className="flex items-center gap-2">
+                  <div className="items-center gap-2 hidden lg:flex">
                     <div>bounaderblog.com{item.linkTo}</div>
                     <div>
                       <Link2 size={10} />
