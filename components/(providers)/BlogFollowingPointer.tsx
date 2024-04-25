@@ -80,27 +80,34 @@ export const FollowPointer = ({
         pointerEvents: "none",
       }}
       initial={{
-        opacity: 1,
+        rotate: 180,
+        scale: 0.5,
       }}
       animate={{
-        opacity: 1,
+        rotate: 0,
+        scale: 1,
       }}
       exit={{
-        opacity: 0,
+        rotate: 180,
+        scale: 0.5,
       }}
     >
       <motion.div
         initial={{
-          opacity: 0,
-        }}
-        animate={{
+          scale: 0.5,
+          rotate: 180,
           opacity: 1,
         }}
+        animate={{
+          scale: 1,
+          rotate: 0,
+        }}
         exit={{
-          opacity: 0,
+          scale: 0.5,
+          rotate: 180,
         }}
         className={
-          "p-10 md:block  hidden border-foreground border-2  -mt-7 bg-foreground/20 shadow-foreground/10 shadow-xl  backdrop-blur-sm   whitespace-nowrap min-w-max text-xs rounded-full"
+          "p-10 md:block  hidden border-slate-50 text-slate-50 border-2  -mt-7 bg-accent/20 shadow-foreground/10 shadow-xl  backdrop-blur-sm   whitespace-nowrap min-w-max text-xs rounded-full"
         }
       >
         <ArrowUpLeft />
