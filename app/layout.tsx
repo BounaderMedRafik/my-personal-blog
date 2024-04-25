@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/(providers)/theme-provider";
 import MyNavigation from "@/components/(layout comps)/MyNavigation";
 import TransitionProvider from "@/components/(providers)/TransitionProvider";
+import ScrollToTop from "@/components/(providers)/ScrollToTop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="max-w-2xl relative mx-auto ">
+              <ScrollToTop />
               <MyNavigation />
               <div className="pt-32 px-5 md:px-0">{children}</div>
             </div>

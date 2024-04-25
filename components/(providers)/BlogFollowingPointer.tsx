@@ -100,7 +100,7 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "p-10 md:block hidden border-foreground border-2  -mt-7 bg-background/10 backdrop-blur-sm   whitespace-nowrap min-w-max text-xs rounded-full"
+          "p-10 md:block  hidden border-foreground border-2  -mt-7 bg-foreground/20 shadow-foreground/10 shadow-xl  backdrop-blur-sm   whitespace-nowrap min-w-max text-xs rounded-full"
         }
       >
         <ArrowUpLeft />
