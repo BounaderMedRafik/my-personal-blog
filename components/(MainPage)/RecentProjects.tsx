@@ -2,6 +2,7 @@
 import { ArrowUpRight, Link2 } from "lucide-react";
 import Link from "next/link";
 import { FollowerPointerCard } from "../(providers)/FollowingPointer";
+import { BlogFollowerPointerCard } from "../(providers)/BlogFollowingPointer";
 
 const recentProj = [
   {
@@ -16,7 +17,7 @@ const recentProj = [
 
 const RecentProjects = () => {
   return (
-    <div className="mt-10 mb-96">
+    <div className="mt-10 ">
       <div className="text-xl font-semibold">Recent Projects</div>
       <div className="mt-2">
         {recentProj.map((item, index) => (
