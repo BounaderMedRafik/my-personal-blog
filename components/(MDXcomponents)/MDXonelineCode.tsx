@@ -27,7 +27,7 @@ const MDXonelineCode: FC<MDXonelineCodeProps> = ({ code }) => {
   };
 
   return (
-    <div className="px-5  group pb-5 shadow-lg pt-2 relative bg-background text-foreground  text-slate-50 rounded-md border border-foreground/40 ">
+    <div className="px-5  group pb-5 shadow-lg pt-2 relative bg-background text-foreground  rounded-md border border-foreground/40 ">
       <div className="flex mb-3 justify-between items-center border-b border-b-foreground/10 ">
         <div className="flex items-center gap-1">
           <div className="w-3 h-3 rounded-full bg-foreground group-hover:bg-primary transition-all"></div>
