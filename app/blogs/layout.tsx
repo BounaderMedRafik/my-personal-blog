@@ -1,4 +1,5 @@
 import MyLogo from "@/components/(brand)/MyLogo";
+import ScrollToTop from "@/components/(providers)/ScrollToTop";
 
 export default function BlogLayout({
   children,
@@ -10,7 +11,9 @@ export default function BlogLayout({
       <div>
         <MyLogo />
       </div>
-      <div className="pb-52">{children}</div>
+      <div className="pb-52">
+        {children} <ScrollToTop />
+      </div>
     </div>
   );
 }

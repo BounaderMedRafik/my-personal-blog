@@ -2,12 +2,28 @@ import React from "react";
 import Link from "next/link";
 import { BlogFollowerPointerCard } from "../(providers)/BlogFollowingPointer";
 import { blogsData } from "@/data/blogs-data";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 const RecentBlog = () => {
   const blogs = blogsData.slice(-4);
   return (
     <div className="mb-96 mt-10">
       <div>
-        <div className="text-xl font-semibold">Recent Blogs</div>
+        <div className="text-xl font-semibold flex items-center justify-between">
+          Recent Blogs
+          <div>
+            <a href="/blogs">
+              <Button size={"sm"} variant={"link"}>
+                <div className="flex items-center gap-2">
+                  Check All
+                  <div>
+                    <ArrowRight size={10} />
+                  </div>
+                </div>
+              </Button>
+            </a>
+          </div>
+        </div>
         <BlogFollowerPointerCard>
           <div className="mt-2 grid md:grid-cols-2 grid-cols-1 ">
             {blogs.map((item, index) => (

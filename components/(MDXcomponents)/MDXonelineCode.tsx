@@ -49,7 +49,7 @@ const MDXonelineCode: FC<MDXonelineCodeProps> = ({ code }) => {
       </div>
       <ScrollArea className="px-10 font-mono font-black pb-5  text-xl overflow-hidden">
         <span className="text-primary font-black mr-2 group-hover:mr-5 transition-all">{`~>`}</span>
-        <span className="opacity-80 truncate">{code}</span>
+        <span className="opacity-80 truncate text-foreground">{code}</span>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
     </div>

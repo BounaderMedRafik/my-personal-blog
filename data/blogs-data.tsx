@@ -126,4 +126,53 @@ export const blogsData = [
       </>
     ),
   },
+  {
+    blogid: 1,
+    title: "Aceternity UI: New & Fresh",
+    desc: `Aceternity UI is a new framework for styling websites in React and NextJS. It has gained significant attention from the web development community due to its innovative features and stunning design components 
+    . This framework offers a wide range of animated components that are ready to be copied and pasted into websites, making it easier for developers to create visually appealing and interactive user interfaces.`,
+    image:
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP4WfPvOTXN_HsFj14iXZeOQyw61Dy0VHWh0jY_j68WOdAYNc6IwhNacBKS-SpW8bIOYJQANEuOggwlOVdjqOjIjUdnUq-zD1CB3IRLqCXzC3tO3cmH8eXuRb6KuzfZ5k5ZgNj1DLJtXoZs9wwqtxUUYOxMOyrIubcIG_ujzW1qdwIeuWU7eJLyvTQvywF/s2200/Meet%20Aceternity%20UI%20-%20A%20Mind%20Blowing%20UI%20Component%20Library.webp",
+    content: (
+      <>
+        <div>
+          <div>
+            <MDXdescription heading="Key Features of Aceternity UI">
+              Aceternity UI stands out for its seamless integration of
+              framer-motion, Tailwind CSS, and shadcn, which results in a
+              masterclass in UI design . The framework provides a collection of
+              starting UI components that can be easily customized and modified
+              to fit any developer's needs . These components are created using
+              HTML elements, giving developers extensive control over each
+              component . Aceternity UI also offers a variety of transitions and
+              animations, allowing developers to create engaging and dynamic
+              user experiences.
+            </MDXdescription>
+            <MDXdescription heading="Benefits of Aceternity UI">
+              One of the main advantages of Aceternity UI is its simplicity and
+              ease of use. Developers can quickly build great-looking websites
+              within minutes by leveraging the pre-built components and
+              animations provided by the framework . The framework eliminates
+              the need for developers to worry about styling and animations, as
+              they can simply copy and paste the trending components into their
+              websites . Aceternity UI also provides the source code and
+              examples for each component, making it easier for users to choose
+              and implement the desired components .
+            </MDXdescription>
+            <MDXdescription heading="Conclusion">
+              Aceternity UI is a revolutionary framework that offers a wide
+              range of animated components and stunning design elements for web
+              development. Its seamless integration of framer-motion, Tailwind
+              CSS, and shadcn sets it apart from other UI frameworks. With
+              Aceternity UI, developers can easily create visually appealing and
+              interactive user interfaces, saving time and effort in the
+              development process. Whether you're a beginner or an experienced
+              developer, Aceternity UI provides the tools and resources to
+              enhance your web development projects .
+            </MDXdescription>
+          </div>
+        </div>
+      </>
+    ),
+  },
 ];

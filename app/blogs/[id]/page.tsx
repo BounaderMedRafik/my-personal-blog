@@ -123,7 +123,7 @@ const ShareButtonLink = ({ link }: { link: number }) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <Button onClick={handleCopy} size={"sm"} variant={"link"}>
-            {copySuccess ? "copied" : "copy"}
+            {copySuccess ? "link copied" : "copy link"}
           </Button>
         </DropdownMenuContent>
       </DropdownMenu>
