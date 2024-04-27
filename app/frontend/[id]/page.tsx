@@ -11,6 +11,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { MDXcodeBlock } from "@/components/(MDXcomponents)/MDXcodeBlock";
 export default function FrontEndpage({
   params,
 }: {
@@ -33,6 +34,7 @@ export default function FrontEndpage({
           <div>
             <ShareButtonLink link={front.frontid} />
           </div>
+          <div>{front.name}</div>
         </div>
       </>
     );
