@@ -86,7 +86,6 @@ export const FollowPointer = ({
       <motion.div
         initial={{
           scale: 0.5,
-
           opacity: 1,
         }}
         animate={{
@@ -99,11 +98,18 @@ export const FollowPointer = ({
         }}
         className={"min-w-max "}
       >
-        <img
-          className="w-[300px] border-foreground/50 border h-[200px] rounded-md  object-cover"
-          src={src}
-          alt="picture"
-        />
+        <div className="relative">
+          <img
+            className="w-20 h-20 dark:invert absolute -left-10  -top-10"
+            src="/pointinghand.svg"
+            alt="macosCursor"
+          />
+          <img
+            className="w-[300px] border-foreground/50  border h-[200px] rounded-md  object-cover"
+            src={src}
+            alt="picture"
+          />
+        </div>
       </motion.div>
     </motion.div>
   );

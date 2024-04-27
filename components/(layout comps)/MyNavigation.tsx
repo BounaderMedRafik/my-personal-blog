@@ -37,7 +37,7 @@ const socials = [
 const links = [
   {
     name: "Blog",
-    linkto: "/blog",
+    linkto: "/blogs",
     icon: <Glasses size={12} />,
   },
   {
@@ -54,12 +54,12 @@ const MyNavigation = () => {
         <div className="flex items-center gap-0.5">
           {links.map((item, index) => (
             <div key={index}>
-              <Link href={item.linkto}>
+              <a href={item.linkto}>
                 <TooltipProvider delayDuration={10}>
                   <Tooltip>
                     <TooltipTrigger>
-                      <Button asChild size={"icon"} variant={"default"}>
-                        <Link href={item.linkto}>{item.icon}</Link>
+                      <Button size={"icon"} variant={"default"}>
+                        {item.icon}
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent className="mb-1">
@@ -67,7 +67,7 @@ const MyNavigation = () => {
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
-              </Link>
+              </a>
             </div>
           ))}
           <DropdownMenu>
@@ -81,7 +81,9 @@ const MyNavigation = () => {
                 {socials.map((item, index) => (
                   <div key={index}>
                     <Button asChild variant={"default"} size={"icon"}>
-                      <Link href={item.link}>{item.icon}</Link>
+                      <a href={item.link} target="_blank">
+                        {item.icon}
+                      </a>
                     </Button>
                   </div>
                 ))}
