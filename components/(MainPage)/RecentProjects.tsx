@@ -4,17 +4,7 @@ import Link from "next/link";
 import { FollowerPointerCard } from "../(providers)/FollowingPointer";
 import { BlogFollowerPointerCard } from "../(providers)/BlogFollowingPointer";
 import { Button } from "../ui/button";
-
-const recentProj = [
-  {
-    name: "Tailwind Scoll Effect",
-    linkTo: "/tailwind-scroll-effect",
-  },
-  {
-    name: "Next Js Image optimization",
-    linkTo: "/next-image-optimization",
-  },
-];
+import { FrontData } from "@/data/frontend-data";
 
 const RecentProjects = () => {
   return (
@@ -23,13 +13,13 @@ const RecentProjects = () => {
         <div>Recent Projects</div>
       </div>
       <div className="mt-2">
-        {recentProj.map((item, index) => (
+        {FrontData.map((item, index) => (
           <div key={index}>
             <FollowerPointerCard
               title={
                 <>
                   <div className="items-center gap-2 hidden lg:flex">
-                    <div>bounaderblog.com{item.linkTo}</div>
+                    <div>Check Now</div>
                     <div>
                       <Link2 size={10} />
                     </div>
@@ -37,7 +27,10 @@ const RecentProjects = () => {
                 </>
               }
             >
-              <ProjectTemp name={item.name} link={item.linkTo} />
+              <ProjectTemp
+                name={item.name}
+                link={`http://localhost:3000/frontend/${item.frontid}`}
+              />
             </FollowerPointerCard>
           </div>
         ))}

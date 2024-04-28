@@ -12,6 +12,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MDXcodeBlock } from "@/components/(MDXcomponents)/MDXcodeBlock";
+import MDXmainTitle from "@/components/(MDXcomponents)/MDXmainTitle";
+import MDXdescription from "@/components/(MDXcomponents)/MDXdescription";
 export default function FrontEndpage({
   params,
 }: {
@@ -34,7 +36,16 @@ export default function FrontEndpage({
           <div>
             <ShareButtonLink link={front.frontid} />
           </div>
-          <div>{front.name}</div>
+          <div className="mt-5 text-6xl text-start font-semibold">
+            <MDXmainTitle title={front.name} />
+          </div>
+          <div className="mt-2 opacity-75">
+            <MDXdescription heading={front.name}>{front.desc}</MDXdescription>
+          </div>
+          <div className="mt-5 rounded-md hover:opacity-90 transition-all shadow border-foreground/20 border">
+            <video autoPlay muted loop src={front.videoURL} />
+          </div>
+          <div className="mt-7">{front.content}</div>
         </div>
       </>
     );
