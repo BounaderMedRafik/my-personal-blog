@@ -11,7 +11,6 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { MDXcodeBlock } from "@/components/(MDXcomponents)/MDXcodeBlock";
 import MDXmainTitle from "@/components/(MDXcomponents)/MDXmainTitle";
 import MDXdescription from "@/components/(MDXcomponents)/MDXdescription";
 export default function FrontEndpage({
@@ -33,6 +32,9 @@ export default function FrontEndpage({
           <div>
             <BlogNavigation linkID={front.frontid} />
           </div>
+          <div className="mt-5">
+            <MyBrandStuff date={front.date} difficulty={front.difficulty} />
+          </div>
           <div>
             <ShareButtonLink link={front.frontid} />
           </div>
@@ -42,8 +44,8 @@ export default function FrontEndpage({
           <div className="mt-2 opacity-75">
             <MDXdescription heading={front.name}>{front.desc}</MDXdescription>
           </div>
-          <div className="mt-5 rounded-md hover:opacity-90 transition-all shadow border-foreground/20 border">
-            <video autoPlay muted loop src={front.videoURL} />
+          <div className="mt-5  overflow-hidden rounded-md opacity-80 transition-all shadow border-foreground/20 border">
+            <video className="" autoPlay muted loop src={front.videoURL} />
           </div>
           <div className="mt-7">{front.content}</div>
         </div>
@@ -125,6 +127,43 @@ const ShareButtonLink = ({ link }: { link: number }) => {
           </Button>
         </DropdownMenuContent>
       </DropdownMenu>
+    </div>
+  );
+};
+
+const MyBrandStuff = ({
+  date,
+  difficulty,
+}: {
+  date: string;
+  difficulty: string;
+}) => {
+  return (
+    <div className="mt-5">
+      <div className="flex items-center gap-2">
+        <img src="/bounadermedrafik.jpeg" className="w-14 h-14 rounded-full" />
+        <div>
+          <div>Bounader Med Rafik</div>
+          <div className="text-sm opacity-80 flex items-center gap-3">
+            {date} •{" "}
+            <div className="flex items-center gap-2">
+              <div
+                className={cn(
+                  "h-3 w-3 rounded-full",
+                  difficulty == "Easy"
+                    ? "bg-green-500"
+                    : difficulty == "Medium"
+                    ? "bg-blue-500"
+                    : difficulty == "Hard"
+                    ? "bg-red-500"
+                    : null
+                )}
+              ></div>
+              {difficulty}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
