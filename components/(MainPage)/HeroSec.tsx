@@ -43,13 +43,13 @@ const AboutMe = () => {
       <div className="mt-10">
         <div className="text-xl font-semibold">About Me?</div>
         <div className="mt-2">
-          I'm Bounader Med Rafik, a 19-year-old designer and web developer. I've
-          spent four years working on personal design projects, fueling my
-          passion for creativity. In addition, I have two years of experience in
-          web development. When I'm not immersed in pixels and code, you can
-          find me hiking in nature, finding inspiration in the great outdoors.
-          I'm excited to leave my mark in the world of design and web
-          development!
+          I&apos;m Bounader Med Rafik, a 19-year-old designer and web developer.
+          I&apos;ve spent four years working on personal design projects,
+          fueling my passion for creativity. In addition, I have two years of
+          experience in web development. When I&apos;m not immersed in pixels
+          and code, you can find me hiking in nature, finding inspiration in the
+          great outdoors. I&apos;m excited to leave my mark in the world of
+          design and web development!
         </div>
       </div>
 
@@ -58,8 +58,8 @@ const AboutMe = () => {
         <div className="mt-2">
           In this blog post, we not only scratch the surface of these front-end
           concepts but also provide practical tips, tricks, and resources to
-          help you master them. Whether you're a seasoned developer looking to
-          expand your skillset or a curious beginner eager to embark on a web
+          help you master them. Whether you&apos;re a seasoned developer looking
+          to expand your skillset or a curious beginner eager to embark on a web
           development journey, this blog post promises to be your ultimate guide
           to front-end magic.
         </div>
