@@ -1,6 +1,7 @@
 import MDXbullet from "@/components/(MDXcomponents)/MDXbullet";
 import { MDXcodeBlock } from "@/components/(MDXcomponents)/MDXcodeBlock";
 import MDXdescription from "@/components/(MDXcomponents)/MDXdescription";
+import MDXlineBreak from "@/components/(MDXcomponents)/MDXlineBreak";
 
 /*  boiler plate
  
@@ -25,8 +26,7 @@ export const FrontData = [
     difficulty: "Easy",
     name: "Basic tooltip using Tailwindcss",
     desc: "A tooltip is a graphical user interface (GUI) element that provides additional information or guidance when interacting with an element in a user interface. When you hover over or tap on an element, a small text box or overlay appears, displaying relevant information about that element Tooltips are commonly used in various  contexts",
-    videoURL:
-      "https://pouch.jumpshare.com/preview/hCX7V7LluYQd9uRRU3D4M0oZa1Bm5zYg9TDWTAVVF_-7jrvWlaq2P5r0lD3PMQvnkiFTjwxzHdPmSjH81zAjA45n5e8HJMkl4MdioxVqk00RNglW2VLeKJ_z-DoQbdiedUDaRbOtYMCZt-20ei7Bim6yjbN-I2pg_cnoHs_AmgI.mp4",
+    videoURL: "/videos/01.mp4",
     content: (
       <>
         <div>
@@ -50,6 +50,49 @@ export const FrontData = [
 `}
               />
             </div>
+            <MDXlineBreak />
+          </div>
+          <div className="mt-7">
+            <MDXdescription heading="group utility">
+              The <span className="text-primary">group</span> utility in
+              Tailwind CSS allows you to style a child element based on the
+              hover, focus, or other states of a parent element. This is
+              particularly useful when you want to achieve effects that would
+              typically require JavaScript or complex CSS selectors
+            </MDXdescription>
+          </div>
+          <div className="mt-7">
+            <MDXdescription heading="how to use group utility">
+              To use the <span className="text-primary">group</span> utility,
+              you need to define a "group" context using the .group class. This
+              class doesn't apply any styles by itself but sets the stage for
+              its children to respond to its states
+            </MDXdescription>
+          </div>
+          <div className="mt-7">
+            <MDXdescription heading="example">
+              <div className="mt-7">
+                <MDXcodeBlock
+                  code={`<div class="group">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Button
+  </button>
+  <p class="text-red-500 group-hover:text-green-500">
+    This text will change color when the button is hovered over.
+  </p>
+</div>
+`}
+                  lang="tsx"
+                />
+              </div>
+              <div className="mt-7">
+                <MDXdescription>
+                  In the example above, the {`<p>`} element will change its text
+                  color to green when the button is hovered over, thanks to the
+                  group-hover:text-green-500 class
+                </MDXdescription>
+              </div>
+            </MDXdescription>
           </div>
         </div>
       </>

@@ -49,7 +49,7 @@ const links = [
 
 const MyNavigation = () => {
   return (
-    <div className="fixed p-1 bg-background/50 backdrop-blur-md border-foreground/50 border-[1px] rounded-full shadow-2xl shadow-foreground/30 z-50   bottom-10 right-1/2 translate-x-1/2">
+    <div className="fixed p-1 bg-background backdrop-blur-md border-foreground/50 border-[1px] rounded-full shadow-2xl shadow-foreground/30 z-50   bottom-10 right-1/2 translate-x-1/2">
       <div className="flex items-center">
         <div className="flex items-center gap-0.5">
           {links.map((item, index) => (
