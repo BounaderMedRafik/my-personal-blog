@@ -6,9 +6,8 @@ import RecentBlog from "./RecentBlog";
 const HeroSec = () => {
   return (
     <div className="font-light">
-      <div className="text-5xl font-bold opacity-10  leading-[59px]">
-        I Know The <span className="bg-primary">Chemistry</span>, And You Know
-        The <span className="bg-primary">Business</span>
+      <div className="flex justify-center">
+        <img src="/favic.png" className="w-14 invert dark:invert-0 " />
       </div>
       <div className="w-full">
         <AboutMe />

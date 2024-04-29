@@ -2,15 +2,26 @@
 import { ArrowRight, ArrowUpRight, Link2 } from "lucide-react";
 import Link from "next/link";
 import { FollowerPointerCard } from "../(providers)/FollowingPointer";
-import { BlogFollowerPointerCard } from "../(providers)/BlogFollowingPointer";
-import { Button } from "../ui/button";
 import { FrontData } from "@/data/frontend-data";
+import { Button } from "../ui/button";
 
 const RecentProjects = () => {
   return (
     <div className="mt-10 ">
       <div className="text-xl font-semibold flex items-center justify-between">
-        <div>Recent Projects</div>
+        Recent Blogs
+        <div>
+          <a href="/frontend">
+            <Button size={"sm"} variant={"link"}>
+              <div className="flex items-center gap-2">
+                Check All
+                <div>
+                  <ArrowRight size={10} />
+                </div>
+              </div>
+            </Button>
+          </a>
+        </div>
       </div>
       <div className="mt-2">
         {FrontData.map((item, index) => (
