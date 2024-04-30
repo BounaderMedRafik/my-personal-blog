@@ -2,6 +2,7 @@ import MDXbullet from "@/components/(MDXcomponents)/MDXbullet";
 import { MDXcodeBlock } from "@/components/(MDXcomponents)/MDXcodeBlock";
 import MDXdescription from "@/components/(MDXcomponents)/MDXdescription";
 import MDXlineBreak from "@/components/(MDXcomponents)/MDXlineBreak";
+import MDXonelineCode from "@/components/(MDXcomponents)/MDXonelineCode";
 
 /*  boiler plate
  
@@ -96,6 +97,135 @@ export const FrontData = [
               </div>
             </MDXdescription>
           </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    frontid: 1,
+    category: "Framer Motion",
+    date: "4/30/2024",
+    difficulty: "Medium",
+    name: "Tabs Hover Animation",
+    desc: "Utilizing Framer Motion, create dynamic hover animations for tabs that can be seamlessly implemented in various scenarios, such as button navigation or header links.",
+    videoURL: "/videos/02.mp4",
+    content: (
+      <>
+        <div>
+          <MDXdescription heading="Initialize next14 project">
+            <div className="mt-10">
+              Easily initialize a next14 project with the following command:
+              <div className="mt-3">
+                <MDXonelineCode code="npx create-next-app@latest my-app" />
+              </div>
+            </div>
+            <div className="mt-10">
+              Now initialize a Framer Motion in your project with the following
+              command:
+              <div className="mt-3">
+                <MDXonelineCode code="npm i framer-motion" />
+              </div>
+            </div>
+          </MDXdescription>
+        </div>
+
+        <MDXlineBreak />
+        <div className="mt-10">
+          <MDXdescription heading="Create a button component">
+            now we can create a button component that will be used in our
+            animation.
+            <div className="mt-3">
+              <MDXcodeBlock
+                code={`
+const HoverAnimationTabs = ({ tabs }: { tabs: string[] }) => {
+  
+  return (
+    <div className="flex items-center gap-2">
+      {tabs.map((item, index) => (
+        <div
+          key={index}
+          className="group relative px-3 py-1  cursor-pointer transition-all  text-sm "
+        >
+          <div className="relative z-10">{item}</div>
+
+          {hovered === item && (
+            <div
+              className="absolute bg-slate-800 inset-0 rounded-md"
+            ></div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default HoverAnimationTabs;`}
+                lang="tsx"
+              />
+            </div>
+          </MDXdescription>
+
+          <div className="mt-10">
+            <MDXdescription heading="Apply the Framer Motion">
+              now we can use the Framer Motion library to create a simple hover
+              animation for a button.
+              <div className="mt-3">
+                <MDXcodeBlock
+                  lang="tsx"
+                  code={`"use client";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+
+const HoverAnimationTabs = ({ tabs }: { tabs: string[] }) => {
+  const [hovered, setHovered] = useState(tabs[0]);
+  return (
+    <div className="flex items-center gap-2">
+      {tabs.map((item, index) => (
+        <motion.div
+          onHoverStart={() => setHovered(item)}
+          key={index}
+          className="group relative px-3 py-1  cursor-pointer transition-all  text-sm "
+        >
+          <div className="relative z-10">{item}</div>
+
+          {hovered === item && (
+            <motion.div
+              layoutId="nav-item"
+              className="absolute bg-slate-800 inset-0 rounded-md"
+            ></motion.div>
+          )}
+        </motion.div>
+      ))}
+    </div>
+  );
+};
+
+export default HoverAnimationTabs;`}
+                />
+              </div>
+            </MDXdescription>
+          </div>
+        </div>
+        <div className="mt-10">
+          <MDXdescription heading="Usage of the component">
+            we can use the component in our page as follows
+            <div className="mt-3">
+              <MDXcodeBlock
+                lang="tsx"
+                code={`import HoverAnimationTabs from "./components/HoverAnimationTabs";
+
+const tabs = ["About", "Contacts", "Blogs"];
+
+export default function Home() {
+  return (
+    <main className="h-screen w-full flex justify-center items-center bg-slate-950 text-slate-50 ">
+      <HoverAnimationTabs tabs={tabs} />
+    </main>
+  );
+}`}
+              />
+            </div>
+          </MDXdescription>
         </div>
       </>
     ),
