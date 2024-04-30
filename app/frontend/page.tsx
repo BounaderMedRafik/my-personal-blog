@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 const categories = ["All", "Tailwindcss", "Framer Motion"];
 
-const page = () => {
+const FrontEndpage = () => {
   const [category, setCategory] = useState("All");
   return (
     <div className="mt-10">
@@ -68,4 +68,4 @@ const FrontTemp = ({ title, link }: { title: string; link: number }) => {
   );
 };
 
-export default page;
+export default FrontEndpage;
