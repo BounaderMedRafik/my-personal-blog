@@ -92,6 +92,7 @@ const ThuggishRuggish = () => {
           src={"/TuggishRuggishWhite.svg"}
         />
       </div>
+      <div></div>
     </div>
   );
 };
