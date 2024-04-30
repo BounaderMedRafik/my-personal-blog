@@ -1,7 +1,6 @@
 "use client";
 import { ArrowRight, ArrowUpRight, Link2 } from "lucide-react";
 import Link from "next/link";
-import { FollowerPointerCard } from "../(providers)/FollowingPointer";
 import { FrontData } from "@/data/frontend-data";
 import { Button } from "../ui/button";
 
@@ -26,23 +25,10 @@ const RecentProjects = () => {
       <div className="mt-2">
         {FrontData.map((item, index) => (
           <div key={index}>
-            <FollowerPointerCard
-              title={
-                <>
-                  <div className="items-center gap-2 hidden lg:flex">
-                    <div>Check Now</div>
-                    <div>
-                      <Link2 size={10} />
-                    </div>
-                  </div>
-                </>
-              }
-            >
-              <ProjectTemp
-                name={item.name}
-                link={`http://localhost:3000/frontend/${item.frontid}`}
-              />
-            </FollowerPointerCard>
+            <ProjectTemp
+              name={item.name}
+              link={`http://localhost:3000/frontend/${item.frontid}`}
+            />
           </div>
         ))}
       </div>

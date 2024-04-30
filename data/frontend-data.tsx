@@ -7,6 +7,7 @@ import MDXlineBreak from "@/components/(MDXcomponents)/MDXlineBreak";
  
   {
   frontid: ,
+  category :'Tailwindcss / Framer Motion',
   date: "",
   difficulty: "Easy / Medium / Hard" ,
   name: "",
@@ -23,6 +24,7 @@ export const FrontData = [
   {
     frontid: 0,
     date: "4/28/2024",
+    category: "Tailwindcss",
     difficulty: "Easy",
     name: "Basic tooltip using Tailwindcss",
     desc: "A tooltip is a graphical user interface (GUI) element that provides additional information or guidance when interacting with an element in a user interface. When you hover over or tap on an element, a small text box or overlay appears, displaying relevant information about that element Tooltips are commonly used in various  contexts",

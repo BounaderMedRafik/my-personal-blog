@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { BlogFollowerPointerCard } from "../(providers)/BlogFollowingPointer";
 import { blogsData } from "@/data/blogs-data";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
@@ -24,7 +23,7 @@ const RecentBlog = () => {
             </a>
           </div>
         </div>
-        <BlogFollowerPointerCard>
+        <>
           <div className="mt-2 grid md:grid-cols-2 grid-cols-1 ">
             {blogs.map((item, index) => (
               <div key={index}>
@@ -37,7 +36,7 @@ const RecentBlog = () => {
               </div>
             ))}
           </div>
-        </BlogFollowerPointerCard>
+        </>
       </div>
     </div>
   );
@@ -54,7 +53,7 @@ const Blog: React.FC<BlogProps> = ({ title, desc, image, link }) => {
   return (
     <div>
       <div className="p-0.5 border-transparent border-2 hover:border-foreground/20 rounded-md transition-all ">
-        <Link href={link} className="cursor-none">
+        <Link href={link}>
           <div className="p-1 bg-background overflow-hidden hover:opacity-90 transition-all group">
             <div className=" rounded-md overflow-hidden">
               <img
