@@ -25,10 +25,7 @@ const RecentProjects = () => {
       <div className="mt-2">
         {FrontData.map((item, index) => (
           <div key={index}>
-            <ProjectTemp
-              name={item.name}
-              link={`http://localhost:3000/frontend/${item.frontid}`}
-            />
+            <ProjectTemp name={item.name} link={`/frontend/${item.frontid}`} />
           </div>
         ))}
       </div>
