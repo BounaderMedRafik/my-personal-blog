@@ -24,12 +24,12 @@ import {
 const socials = [
   {
     social: "Github",
-    link: "github.com",
+    link: "https://github.com/BounaderMedRafik",
     icon: <GithubIcon size={12} />,
   },
   {
     social: "Youtube",
-    link: "yotube.com",
+    link: "https://www.youtube.com/channel/UCj_nkiWsd2mACSBsI8pny4g",
     icon: <YoutubeIcon size={12} />,
   },
 ];

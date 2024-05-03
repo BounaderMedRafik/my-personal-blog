@@ -67,7 +67,7 @@ const BlogNavigation = ({ linkID }: { linkID: number }) => {
       >
         {linkBefor < 0 ? null : (
           <Button variant={"link"}>
-            <Link href={`/blogs/${linkBefor}`}>
+            <Link href={`/frontend/${linkBefor}`}>
               <div className="flex items-center gap-2">
                 <div>
                   <ChevronLeft size={10} />
