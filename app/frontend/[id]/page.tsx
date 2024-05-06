@@ -80,7 +80,7 @@ const BlogNavigation = ({ linkID }: { linkID: number }) => {
 
         {linkAfter > FrontData.length - 1 ? null : (
           <Button variant={"link"}>
-            <Link href={`/blogs/${linkAfter}`}>
+            <Link href={`/frontend/${linkAfter}`}>
               <div className="flex items-center gap-2">
                 <div>Next</div>
                 <div>
@@ -97,7 +97,7 @@ const BlogNavigation = ({ linkID }: { linkID: number }) => {
 
 const ShareButtonLink = ({ link }: { link: number }) => {
   const [copySuccess, setCopySuccess] = useState(false);
-  const textToCopy = `http://localhost:3000/frontend/${link}`;
+  const textToCopy = `https://my-personal-blog-psi.vercel.app/frontend/${link}`;
 
   const handleCopy = async () => {
     try {

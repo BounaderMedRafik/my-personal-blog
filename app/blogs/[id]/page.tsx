@@ -97,7 +97,7 @@ const BlogNavigation = ({ linkID }: { linkID: number }) => {
 
 const ShareButtonLink = ({ link }: { link: number }) => {
   const [copySuccess, setCopySuccess] = useState(false);
-  const textToCopy = `http://localhost:3000/blogs/${link}`;
+  const textToCopy = `https://my-personal-blog-psi.vercel.app/blogs/${link}`;
 
   const handleCopy = async () => {
     try {
