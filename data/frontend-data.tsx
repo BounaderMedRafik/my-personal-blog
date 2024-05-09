@@ -230,4 +230,15 @@ export default function Home() {
       </>
     ),
   },
+  {
+    frontid: 2,
+    category: "Tailwindcss",
+    date: "5/10/2024",
+    difficulty: "Medium",
+    name: "Discord shop Card Hover animation",
+    desc: "",
+    videoURL: "/videos/03.webm",
+    content:
+      "Discover a new way to interact with the Discord Shop Card, featuring a captivating hover animation that brings the card to life. As you hover over the card, watch as it responds to your movements, creating a dynamic and engaging visual experience. This interactive feature adds a touch of excitement to your shopping experience, making it more enjoyable and memorable. Try it out now and see the Discord Shop Card in a whole new light!",
+  },
 ];
