@@ -236,9 +236,45 @@ export default function Home() {
     date: "5/10/2024",
     difficulty: "Medium",
     name: "Discord shop Card Hover animation",
-    desc: "",
+    desc: "Discover a new way to interact with the Discord Shop Card, featuring a captivating hover animation that brings the card to life. As you hover over the card, watch as it responds to your movements, creating a dynamic and engaging visual experience. This interactive feature adds a touch of excitement to your shopping experience, making it more enjoyable and memorable. Try it out now and see the Discord Shop Card in a whole new light!",
     videoURL: "/videos/03.webm",
-    content:
-      "Discover a new way to interact with the Discord Shop Card, featuring a captivating hover animation that brings the card to life. As you hover over the card, watch as it responds to your movements, creating a dynamic and engaging visual experience. This interactive feature adds a touch of excitement to your shopping experience, making it more enjoyable and memorable. Try it out now and see the Discord Shop Card in a whole new light!",
+    content: (
+      <>
+        <div>
+          <MDXbullet heading="Tech Stack" data={["TailwindCSS", "HTML"]} />
+        </div>
+        <div>
+          <MDXcodeBlock
+            code={`<div id="page-container" class="flex h-screen w-full items-center justify-center bg-indigo-100">
+  <div class="group h-full max-h-96 w-full max-w-72 overflow-hidden rounded-2xl shadow-lg duration-500 hover:-translate-y-3 hover:shadow-xl hover:shadow-black/60">
+    <div class="h-[60%] w-full">
+      <img class="h-full w-full object-cover object-center" src="https://media0.giphy.com/media/2zUn8hAwJwG4abiS0p/giphy.gif?cid=6c09b95234x5mzwama9j5a4o1xu1lqgg7pa53nh1dumfnhrx&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="" />
+    </div>
+    <div class="relative flex h-[40%] w-full flex-col items-start justify-between bg-gray-800 p-5 pb-8">
+      <div class="text-3xl font-black text-slate-50">MeowCat</div>
+      <div class="flex items-baseline gap-1">
+        <div class="text-xl font-bold text-slate-50 transition-all duration-300 group-hover:opacity-0">$6.99</div>
+        <div class="text-xs text-slate-50 opacity-75 transition-all duration-300 group-hover:opacity-0">$4.20 with <span class="font-bold italic">kisses</span></div>
+      </div>
+      <div class="pointer-events-none absolute -bottom-10 left-1/2 grid w-full -translate-x-1/2 grid-cols-5 gap-1 p-5 opacity-0 transition-all duration-300 group-hover:pointer-events-auto group-hover:bottom-0 group-hover:opacity-100">
+        <button class="col-span-4 w-full rounded-lg bg-indigo-500 p-2 font-bold text-slate-50 transition-all hover:bg-indigo-400">Buy it now $6.99</button>
+        <button class="col-span-1 flex w-full items-center justify-center rounded-lg bg-indigo-500 p-2 font-bold text-slate-50 transition-all hover:bg-indigo-400">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift">
+            <rect x="3" y="8" width="18" height="4" rx="1" />
+            <path d="M12 8v13" />
+            <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+            <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`}
+            lang="tsx"
+          />
+        </div>
+      </>
+    ),
   },
 ];
