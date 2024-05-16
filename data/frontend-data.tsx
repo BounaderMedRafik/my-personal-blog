@@ -277,4 +277,197 @@ export default function Home() {
       </>
     ),
   },
+  {
+    frontid: 3,
+    category: "Framer Motion",
+    date: "",
+    difficulty: "Medium",
+    name: "Zoom Out Scroll Effect",
+    desc: "Zoom Out Scroll Effect is a unique and captivating animation that brings your website to life. As you scroll down the page, the elements on the screen will",
+    videoURL: "/videos/04.webm",
+    content: (
+      <>
+        <div>
+          <MDXbullet
+            heading="Tech Stack"
+            data={["Framer Motion", "Tailwindcss", "NextJS", "Lenis"]}
+          />
+        </div>
+        <div>
+          <MDXdescription heading="Home page" />
+          <div className="mt-5">
+            <MDXcodeBlock
+              lang="tsx"
+              code={`"use client";
+import { useRef, useEffect } from "react";
+import SectionOne from "./comps/SectionOne";
+import SectionTwo from "./comps/SectionTwo";
+import { useScroll } from "framer-motion";
+import Lenis from "lenis";
+
+export default function Home() {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
+  return (
+    <>
+      <main ref={ref} className="relative h-[200vh] bg-black ">
+        <SectionOne scrollYProgress={scrollYProgress} />
+        <SectionTwo scrollYProgress={scrollYProgress} />
+      </main>
+      <div className="flex items-center justify-center w-full h-screen">
+        extra space
+      </div>
+    </>
+  );
+}`}
+            />
+          </div>
+        </div>
+        <div className="mt-10">
+          <MDXdescription heading="Section 1 Page" />
+          <div className="mt-5">
+            <MDXcodeBlock
+              lang="tsx"
+              code={`import { useTransform, motion } from "framer-motion";
+import React from "react";
+import { FaPagelines } from "react-icons/fa";
+
+const SectionOne = ({ scrollYProgress }) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  return (
+    <motion.div
+      style={{
+        scale,
+        opacity,
+      }}
+      className=" sticky top-0 w-full h-screen flex justify-center items-center bg-slate-50 gap-5"
+    >
+      Section One <FaPagelines />
+    </motion.div>
+  );
+};
+
+export default SectionOne;`}
+            />
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <MDXdescription heading="Section 2 Page" />
+          <div className="mt-5">
+            <MDXcodeBlock
+              lang="tsx"
+              code={`import { useTransform, motion } from "framer-motion";
+import React from "react";
+import { FaPagelines } from "react-icons/fa";
+              
+const SectionTwo = ({ scrollYProgress }) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["rgb(248 250 252)", "#E53286"]
+  );
+              
+  return (
+    <div className="overflow-hidden">
+      <motion.div
+        style={{
+          scale,
+          backgroundColor,
+        }}
+         className=" relative z-10 flex items-center justify-center gap-5 w-full h-screen  text-slate-50"
+      >
+        Section Two <FaPagelines />
+      </motion.div>
+    </div>
+  );
+};
+              
+export default SectionTwo;`}
+            />
+          </div>
+        </div>
+        <MDXlineBreak />
+        <div>
+          <MDXdescription heading="What is useTransform?">
+            In Framer Motion, useTransform is a powerful hook that allows you to
+            create new motion values based on existing ones. It provides two
+            main functionalities:
+          </MDXdescription>
+        </div>
+        <div>
+          <MDXbullet
+            heading="Transformation Function:"
+            data={[
+              "You can define a function that takes the current value of a motion value and transforms it into a new value.",
+              "This function can access other motion values using the get() method, enabling you to create complex relationships between animated properties.",
+              "The function is re-evaluated whenever the input motion value changes, ensuring your animations stay synchronized.",
+            ]}
+          />
+        </div>
+        <div>
+          <MDXbullet
+            heading="Range Mapping:"
+            data={[
+              "You can map a motion value from one range of values (input range) to another range of values (output range).",
+              "This is useful for creating non-linear animations or for controlling properties that have different value scales compared to the input motion value.",
+              "Both input and output ranges must be of the same length (number of elements) and have a linear order (increasing or decreasing).",
+              "The output range can be of various types supported by Framer Motion, such as numbers, colors, shadows, etc.",
+            ]}
+          />
+        </div>
+        <div>
+          <MDXdescription heading="Code Example" />
+          <div className="mt-5">
+            <MDXcodeBlock
+              lang="tsx"
+              code={`import { useTransform } from 'framer-motion';
+
+const scrollY = useMotionValue(0); // Represents scroll position
+
+const opacity = useTransform(scrollY, (val) => {
+  // Map scrollY (0-100) to opacity (1-0) with a slight ease-in
+  const progress = val / 100;
+  return Math.pow(progress, 2);
+});
+
+return (
+  <div style={{ opacity }}>
+    {/* Content that fades in as you scroll down */}
+  </div>
+);
+`}
+            />
+          </div>
+        </div>
+        <div>
+          <MDXbullet
+            heading="In this example:"
+            data={[
+              "scrollY is a motion value representing the scroll position.",
+              "useTransform creates a new motion value opacity based on scrollY.",
+              "The transformation function maps scrollY values (0-100) to opacity values (1-0) with an ease-in effect using Math.pow(progress, 2).",
+            ]}
+          />
+        </div>
+      </>
+    ),
+  },
 ];
