@@ -280,7 +280,7 @@ export default function Home() {
   {
     frontid: 3,
     category: "Framer Motion",
-    date: "",
+    date: "5/16/2024",
     difficulty: "Medium",
     name: "Zoom Out Scroll Effect",
     desc: "Zoom Out Scroll Effect is a unique and captivating animation that brings your website to life. As you scroll down the page, the elements on the screen will",
